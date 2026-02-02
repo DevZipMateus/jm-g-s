@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
@@ -14,6 +15,8 @@ const navLinks = [
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,6 +28,13 @@ const Header = () => {
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
+    
+    // Se não estiver na home, redireciona para home com a âncora
+    if (!isHomePage) {
+      window.location.href = "/" + href;
+      return;
+    }
+    
     const element = document.querySelector(href);
     if (element) {
       const headerHeight = 80;
@@ -33,6 +43,17 @@ const Header = () => {
         top: elementPosition - headerHeight,
         behavior: "smooth",
       });
+    }
+  };
+
+  const getLogoHref = () => {
+    return isHomePage ? "#inicio" : "/";
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    if (isHomePage) {
+      e.preventDefault();
+      handleNavClick("#inicio");
     }
   };
 
@@ -48,11 +69,8 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a
-            href="#inicio"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick("#inicio");
-            }}
+            href={getLogoHref()}
+            onClick={handleLogoClick}
             className="flex items-center gap-3"
           >
             <img
