@@ -1,6 +1,6 @@
 import { Phone, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
   return (
@@ -8,15 +8,18 @@ const Hero = () => {
       id="inicio"
       className="relative min-h-screen flex items-center pt-20 overflow-hidden"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Entrega de gás de cozinha - JM Gás & Cia"
-          className="w-full h-full object-cover"
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-primary/30" />
+      {/* Background with Logo */}
+      <div className="absolute inset-0 bg-primary">
+        {/* Logo as background */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img
+            src={logo}
+            alt="JM Gás & Cia Logo"
+            className="w-[80%] max-w-3xl h-auto opacity-10 object-contain"
+          />
+        </div>
+        {/* Subtle gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/90" />
       </div>
 
       <div className="container-custom relative z-10">
