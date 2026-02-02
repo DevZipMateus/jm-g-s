@@ -139,4 +139,9 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
+
+  /* Vitrine page - iframe styles */
+  .vitrine-iframe {
+    -webkit-overflow-scrolling: touch;
+  }
 }
