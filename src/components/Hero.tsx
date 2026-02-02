@@ -16,7 +16,7 @@ const Hero = () => {
           className="w-full h-full object-cover"
         />
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-primary/30" />
       </div>
 
       <div className="container-custom relative z-10">
