@@ -7,6 +7,7 @@ const navLinks = [
   { href: "#inicio", label: "Início" },
   { href: "#sobre", label: "Sobre" },
   { href: "#produtos", label: "Produtos" },
+  { href: "/vitrine", label: "Vitrine", isPage: true },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -64,17 +65,27 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick(link.href);
-                }}
-                className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-              >
-                {link.label}
-              </a>
+              link.isPage ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(link.href);
+                  }}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
           </nav>
 
@@ -116,17 +127,27 @@ const Header = () => {
       >
         <nav className="bg-background border-t border-border px-4 py-4 space-y-2">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick(link.href);
-              }}
-              className="block py-3 px-4 text-foreground/80 hover:text-primary hover:bg-muted rounded-lg font-medium transition-all duration-200"
-            >
-              {link.label}
-            </a>
+            link.isPage ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className="block py-3 px-4 text-foreground/80 hover:text-primary hover:bg-muted rounded-lg font-medium transition-all duration-200"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick(link.href);
+                }}
+                className="block py-3 px-4 text-foreground/80 hover:text-primary hover:bg-muted rounded-lg font-medium transition-all duration-200"
+              >
+                {link.label}
+              </a>
+            )
           ))}
           <div className="pt-2">
             <Button

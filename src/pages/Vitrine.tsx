@@ -64,6 +64,7 @@ const Vitrine = () => {
             height: "calc(100vh - 80px)",
             border: "none",
             zIndex: 0,
+            paddingBottom: "80px",
           }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           loading="lazy"
