@@ -1,5 +1,5 @@
 import { Target, Eye, Heart, Shield, Users, Zap, Award } from "lucide-react";
-import historyBg from "@/assets/history-bg.jpg";
+
 
 const values = [
   {
@@ -42,40 +42,27 @@ const About = () => {
         </div>
 
         {/* History */}
-        <div className="relative rounded-3xl overflow-hidden shadow-custom mb-16 border border-border">
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <img
-              src={historyBg}
-              alt="Entrega de gás na comunidade"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/40" />
-          </div>
-          
-          {/* Content */}
-          <div className="relative z-10 p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-heading font-bold text-foreground mb-4">
-                  Nossa história
-                </h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  A JM Gás e Cia surgiu em 27 de dezembro de 2018, com o objetivo de atender a comunidade local oferecendo gás com qualidade, segurança e agilidade na entrega.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Desde o início, a empresa preza pelo bom atendimento, pela confiança dos clientes e pelo compromisso com a segurança, buscando sempre aprimorar seus serviços e fortalecer seu nome no mercado.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <div className="bg-background/90 backdrop-blur-sm rounded-2xl p-8 text-center shadow-lg">
-                  <div className="text-5xl font-heading font-extrabold text-primary mb-2">
-                    2018
-                  </div>
-                  <p className="text-muted-foreground font-medium">
-                    Ano de fundação
-                  </p>
+        <div className="bg-gradient-card rounded-3xl p-8 md:p-12 shadow-custom mb-16 border border-border">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-heading font-bold text-foreground mb-4">
+                Nossa história
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                A JM Gás e Cia surgiu em 27 de dezembro de 2018, com o objetivo de atender a comunidade local oferecendo gás com qualidade, segurança e agilidade na entrega.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Desde o início, a empresa preza pelo bom atendimento, pela confiança dos clientes e pelo compromisso com a segurança, buscando sempre aprimorar seus serviços e fortalecer seu nome no mercado.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <div className="bg-primary/5 rounded-2xl p-8 text-center">
+                <div className="text-5xl font-heading font-extrabold text-primary mb-2">
+                  2018
                 </div>
+                <p className="text-muted-foreground font-medium">
+                  Ano de fundação
+                </p>
               </div>
             </div>
           </div>
