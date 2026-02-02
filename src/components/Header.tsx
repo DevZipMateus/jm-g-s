@@ -66,12 +66,12 @@ const Header = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+        <div className="relative flex items-center justify-between h-20">
+          {/* Logo - Left */}
           <a
             href={getLogoHref()}
             onClick={handleLogoClick}
-            className="flex items-center gap-3"
+            className="flex items-center gap-3 z-10"
           >
             <img
               src={logo}
@@ -80,8 +80,8 @@ const Header = () => {
             />
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Centered absolutely */}
+          <nav className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               link.isPage ? (
                 <a
@@ -107,8 +107,8 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button Desktop */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* CTA Button Desktop - Right */}
+          <div className="hidden md:flex items-center gap-4 z-10">
             <Button
               asChild
               variant="hero"
