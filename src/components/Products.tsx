@@ -1,4 +1,4 @@
-import { Flame, Droplets, Dog, Phone } from "lucide-react";
+import { Flame, Droplets, Dog, Phone, ShoppingBag, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const products = [
@@ -98,6 +98,48 @@ const Products = () => {
               </Button>
             </div>
           ))}
+        </div>
+
+        {/* Vitrine Showcase */}
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-primary/90 to-accent p-1 mb-12">
+          <div className="bg-gradient-to-br from-primary via-primary/95 to-accent rounded-[22px] p-8 sm:p-12 relative overflow-hidden">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+            
+            <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+              {/* Icon area */}
+              <div className="flex-shrink-0">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-primary-foreground/15 backdrop-blur-sm flex items-center justify-center border border-primary-foreground/20">
+                  <ShoppingBag className="h-12 w-12 sm:h-14 sm:w-14 text-secondary" />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 text-center lg:text-left">
+                <span className="inline-block px-3 py-1 bg-secondary/20 text-secondary rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                  Vitrine Online
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-primary-foreground mb-3">
+                  Confira todos os nossos produtos e preços
+                </h3>
+                <p className="text-primary-foreground/80 text-lg max-w-2xl mb-6">
+                  Navegue pela nossa vitrine completa com preços atualizados. Rações, água mineral, gás e muito mais — tudo em um só lugar!
+                </p>
+                <Button
+                  asChild
+                  variant="hero"
+                  size="lg"
+                  className="group/btn"
+                >
+                  <a href="/vitrine">
+                    Explorar vitrine
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* CTA */}

@@ -68,7 +68,7 @@ const Hero = () => {
                 variant="heroOutline"
                 size="lg"
               >
-                <a href="#produtos">
+                <a href="/vitrine">
                   Ver produtos
                 </a>
               </Button>
