@@ -1,43 +1,48 @@
-import { Flame, Droplets, Dog, Phone, ShoppingBag, ArrowRight } from "lucide-react";
+import { Droplets, Dog, Phone, ShoppingBag, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import glp13SuperGas from "@/assets/glp-13-supergas.jpg";
+import glp13NacionalGas from "@/assets/glp-13-nacionalgas.jpg";
+import glp13NgcGas from "@/assets/glp-13-ngcgas.jpg";
+import glp13CopaGas from "@/assets/glp-13-copagas.jpg";
+import glpP20SuperGas from "@/assets/glp-p20-supergas.jpg";
+import glpP45NacionalGas from "@/assets/glp-p45-nacionalgas.jpg";
 
 const products = [
   {
-    icon: Flame,
-    title: "Gás de cozinha 13kg",
-    description: "Botijão padrão para uso doméstico. Ideal para o dia a dia da sua família.",
+    image: glp13SuperGas,
+    title: "GLP 13kg Super Gás",
+    description: "Botijão padrão Supergasbras para uso doméstico. Ideal para o dia a dia da sua família.",
     highlight: "Mais vendido",
     highlightColor: "bg-accent",
   },
   {
-    icon: Flame,
-    title: "Gás P20 (empilhadeira)",
-    description: "Cilindro de 20kg para empilhadeiras e uso industrial.",
+    image: glp13NacionalGas,
+    title: "GLP 13kg Nacional Gás",
+    description: "Botijão Nacional Gás 13kg. Segurança e qualidade para sua casa.",
     highlight: null,
   },
   {
-    icon: Flame,
-    title: "Gás P45",
-    description: "Cilindro de 45kg para comércios, restaurantes e indústrias.",
+    image: glp13NgcGas,
+    title: "GLP 13kg NGC Gás",
+    description: "Botijão NGC (Liquigás) 13kg. Confiança e praticidade no dia a dia.",
     highlight: null,
   },
   {
-    icon: Droplets,
-    title: "Água mineral 20L",
-    description: "Galão de água mineral pura e fresca para hidratação da sua família.",
+    image: glp13CopaGas,
+    title: "GLP 13kg Copa Gás",
+    description: "Botijão Copagaz 13kg. Qualidade garantida para sua cozinha.",
     highlight: null,
   },
   {
-    icon: Dog,
-    title: "Rações para pets",
-    description: "Rações de qualidade para cães e gatos. Diversas marcas disponíveis.",
-    highlight: "Novidade",
-    highlightColor: "bg-secondary",
+    image: glpP20SuperGas,
+    title: "GLP P20 Super Gás",
+    description: "Cilindro de 20kg Supergasbras para empilhadeiras e uso industrial.",
+    highlight: null,
   },
   {
-    icon: Dog,
-    title: "Rações para animais",
-    description: "Rações para aves, suínos e equinos. Produtos selecionados.",
+    image: glpP45NacionalGas,
+    title: "GLP P45 Nacional Gás",
+    description: "Cilindro de 45kg Nacional Gás para comércios, restaurantes e indústrias.",
     highlight: null,
   },
 ];
@@ -73,8 +78,13 @@ const Products = () => {
                   {product.highlight}
                 </span>
               )}
-              <div className="p-4 bg-primary/10 rounded-2xl w-fit mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                <product.icon className="h-8 w-8 text-primary" />
+              <div className="w-full h-48 rounded-xl overflow-hidden mb-6 bg-muted flex items-center justify-center">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="h-full w-full object-contain p-4"
+                  loading="lazy"
+                />
               </div>
               <h3 className="text-xl font-heading font-bold text-foreground mb-3">
                 {product.title}
